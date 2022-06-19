@@ -46,7 +46,7 @@ const initialData: State = {
 const FormContext = createContext<ContextType | undefined>(undefined);
 
 // Reducer
-enum FormActions {
+export enum FormActions {
   setCurrentStep,
   setName,
   setLevel,
@@ -73,7 +73,7 @@ const FormReducer = (state: State, action: Action) => {
 
 // Provider será um componente, ele será chamado no App.tsx, será o componente principal da aplicação
 // Tudo que tiver na aplicação estará dentro do ambiente e assim teremos acesso aos dados do Context
-const FormProvider = ({children}: FormProviderProps) => {
+export const FormProvider = ({children}: FormProviderProps) => {
 
   const [state, dispatch] = useReducer(FormReducer, initialData);
   const value = {state, dispatch};
@@ -87,7 +87,7 @@ const FormProvider = ({children}: FormProviderProps) => {
 
 // Context Hook
 // Será usado para ter acesso aos dados do Context
-const useForm = () => {
+export const useForm = () => {
   const context = useContext(FormContext);
 
   if(context === undefined) { // Verifica se os dados recebidos esta fora do Provider
