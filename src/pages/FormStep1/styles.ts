@@ -22,6 +22,10 @@ export const Container = styled.div`
   label {
     font-size: 13px;
 
+    span {
+      color: red;
+    }
+
     input {
       display: block;
       margin-top: 7px;
