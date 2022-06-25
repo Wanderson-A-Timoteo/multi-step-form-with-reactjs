@@ -1,4 +1,4 @@
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import * as C from './styles';
 import { useForm, FormActions } from '../../contexts/FormContext';
 import { Theme } from '../../components/Theme';
@@ -10,23 +10,34 @@ export const FormStep3 = () => {
   const { state, dispatch } = useForm();
 
   useEffect( () => {
-    dispatch({
-      type: FormActions.setCurrentStep,
-      payload: 1
-    });
+    if (state.name === '') {
+      history.push('/');
+    } else {
+      dispatch({
+        type: FormActions.setCurrentStep,
+        payload: 3
+      });
+    }
   }, []);
 
   const handleNextStep = () => {
-    if (state.name !== '') {
-      history.push('/step2');
+    if (state.email !== '' && state.github !== '') {
+      console.log(state);
     } else {
       alert("Preencha todos os dados obrigatórios.")
     }
   }
 
-  const handleNameChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch( {
-      type: FormActions.setName,
+      type: FormActions.setEmail,
+      payload: e.target.value
+    });
+  }
+
+  const handleGithubChange = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch( {
+      type: FormActions.setGithub,
       payload: e.target.value
     });
   }
@@ -34,22 +45,32 @@ export const FormStep3 = () => {
   return(
     <Theme>
       <C.Container>
-        <p>Passo 1/3</p>
-        <h1>Vamos começar com seu nome</h1>
-        <p>Preencha o campo abaixo com seu nome completo.</p>
+        <p>Passo 3/3</p>
+        <h1>Legal {state.name}, onde te achamos?</h1>
+        <p>Preencha os dados para conseguirmos entrar em contato. </p>
 
         <hr />
 
         <label>
-          Nome Completo <span>*</span>
+          Qual seu e-mail? <span>*</span>
           <input 
-            type="text" 
+            type="email" 
             autoFocus 
-            value={state.name} 
-            onChange={handleNameChange}
+            value={state.email} 
+            onChange={handleEmailChange}
           />
         </label>
-        <button onClick={handleNextStep}>Próximo</button>
+
+        <label>
+          Qual seu Github? <span>*</span>
+          <input 
+            type="url" 
+            value={state.github} 
+            onChange={handleGithubChange}
+          />
+        </label>
+        <Link to="/step2" className="backButton">Voltar</Link>
+        <button onClick={handleNextStep}>Finalizar Cadastro</button>
       </C.Container>
     </Theme>
   );

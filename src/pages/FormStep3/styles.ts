@@ -21,6 +21,8 @@ export const Container = styled.div`
 
   label {
     font-size: 13px;
+    display: block;
+    margin-top: 20px;
 
     span {
       color: #FF0F0F;
@@ -51,5 +53,12 @@ export const Container = styled.div`
     border-radius: 20px;
     cursor: pointer;
     margin-top: 30px;
+  }
+
+  .backButton {
+    font-size: 16px;
+    text-decoration: none;
+    padding: 20px 40px;
+    color: #B8B8D4;
   }
 `;
