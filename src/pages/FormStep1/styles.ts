@@ -23,7 +23,7 @@ export const Container = styled.div`
     font-size: 13px;
 
     span {
-      color: red;
+      color: #FF0F0F;
     }
 
     input {
