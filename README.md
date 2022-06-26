@@ -21,7 +21,7 @@
 
 ## 💻 Projeto
 
-Este projeto consiste em um formulário de cadastro multi-etapas e com validação de campos preenchidos, neste o usuário preenche os dados solicitados e ao clicar no botão próximo o sistema renderiza na a tela do passo seguinte até a finalização. 
+Este projeto consiste em um formulário de cadastro multi-etapas e com validação de campos preenchidos, neste o usuário preenche os dados solicitados e ao clicar no botão próximo o sistema renderiza a tela do passo seguinte até a finalização. 
 
 Durante o desenvolvimento deste projeto, pude treinar a criação de componetes, utilização de Hooks, a criação de rota para cada etapa do cadastro, foi utilizado React Router para navegar entre as telas sem recarregar a página e foi desenvolvido uma Context API para acessar os dados em qualquer página do sistema. 
 <br>
