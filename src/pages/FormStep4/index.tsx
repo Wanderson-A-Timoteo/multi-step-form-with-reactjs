@@ -31,17 +31,20 @@ export const FormStep4 = () => {
 
         <h3>Confira seus dados enviados.</h3>
 
-        <h4>Nome:</h4>
+        <span>Nome:</span>
         <p> {state.name} </p>
 
-        <h4>Nível:</h4>
+        <span>Nível:</span>
         <p> {state.level === 0 ? 'Programador Iniciante' : 'Programador Profissional'} </p>
 
-        <h4>E-mail:</h4>
+        <span>E-mail:</span>
         <p> {state.email} </p>
 
-        <h4>Github:</h4> 
+        <span>Github:</span> 
         <p> {state.github} </p>
+
+        <span>Portfólio ou LinkedIn:</span> 
+        <p> {state.portfolio} </p>
         
       </C.Container>
     </Theme>

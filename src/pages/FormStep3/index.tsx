@@ -21,7 +21,7 @@ export const FormStep3 = () => {
   }, []);
 
   const handleNextStep = () => {
-    if (state.email !== '' && state.github !== '') {
+    if (state.email !== '' && state.github !== '' && state.portfolio !== '') {
       history.push('/step4');
     } else {
       alert("Preencha todos os dados obrigatórios.")
@@ -38,6 +38,13 @@ export const FormStep3 = () => {
   const handleGithubChange = (e: ChangeEvent<HTMLInputElement>) => {
     dispatch( {
       type: FormActions.setGithub,
+      payload: e.target.value
+    });
+  }
+
+  const handlePortfolioChange = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch( {
+      type: FormActions.setPortfolio,
       payload: e.target.value
     });
   }
@@ -67,6 +74,15 @@ export const FormStep3 = () => {
             type="url" 
             value={state.github} 
             onChange={handleGithubChange}
+          />
+        </label>
+
+        <label>
+          Qual seu Portfólio ou LinkedIn <span>*</span>
+          <input 
+            type="url" 
+            value={state.portfolio} 
+            onChange={handlePortfolioChange}
           />
         </label>
         <Link to="/step2" className="backButton">Voltar</Link>

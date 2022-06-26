@@ -15,6 +15,7 @@ type State = {
   level: 0 | 1;
   email: string;
   github: string;
+  portfolio: string;
 }
 
 // Types de action
@@ -39,7 +40,8 @@ const initialData: State = {
   name: '',
   level: 0,
   email: '',
-  github: ''
+  github: '',
+  portfolio: ''
 }
 
 // Context
@@ -51,7 +53,8 @@ export enum FormActions {
   setName,
   setLevel,
   setEmail,
-  setGithub
+  setGithub,
+  setPortfolio
 }
 
 const FormReducer = (state: State, action: Action) => {
@@ -66,6 +69,8 @@ const FormReducer = (state: State, action: Action) => {
       return {...state, email: action.payload};
     case FormActions.setGithub:
       return {...state, github: action.payload};
+    case FormActions.setPortfolio:
+      return {...state, portfolio: action.payload};
     default: 
     return state;
   }
