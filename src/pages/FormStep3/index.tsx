@@ -22,7 +22,7 @@ export const FormStep3 = () => {
 
   const handleNextStep = () => {
     if (state.email !== '' && state.github !== '') {
-      console.log(state);
+      history.push('/step4');
     } else {
       alert("Preencha todos os dados obrigatórios.")
     }
@@ -45,7 +45,7 @@ export const FormStep3 = () => {
   return(
     <Theme>
       <C.Container>
-        <p>Passo 3/3</p>
+        <p>Passo 3/4</p>
         <h1>Legal {state.name}, onde te achamos?</h1>
         <p>Preencha os dados para conseguirmos entrar em contato. </p>
 

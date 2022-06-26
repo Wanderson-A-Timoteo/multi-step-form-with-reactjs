@@ -56,9 +56,16 @@ export const Container = styled.div`
   }
 
   .backButton {
-    font-size: 16px;
-    text-decoration: none;
+    margin-top: 20px;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
     padding: 20px 40px;
-    color: #B8B8D4;
+    background-color: #B8B8D4;
+    border: 0;
+    border-radius: 20px;
+    color: #FFF;
+    text-decoration: none;
+    cursor: pointer;
   }
 `;

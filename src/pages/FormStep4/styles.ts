@@ -21,41 +21,14 @@ export const Container = styled.div`
 
   label {
     font-size: 13px;
-
-    span {
-      color: #FF0F0F;
-    }
-
-    input {
-      display: block;
-      margin-top: 7px;
-      box-sizing: border-box;
-      width: 100%;
-      padding: 20px 10px;
-      border: 2px solid #00AA5B;
-      border-radius: 10px;
-      color: #FFF;
-      outline: 0;
-      font-size: 15px;
-      background-color: #02044A;
-    }
-  }
-
-  button {
-    background-color: #00AA5B;
-    color: #FFF;
-    font-size: 14px;
-    font-weight: bold;
-    padding: 20px 40px;
-    border: 0;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 30px;
+    display: block;
+    margin-top: 20px;
   }
 
   .backButton {
+    display: block;
+    width: 50px;
     margin-top: 20px;
-    margin-right: 10px;
     font-size: 14px;
     font-weight: bold;
     padding: 20px 40px;
